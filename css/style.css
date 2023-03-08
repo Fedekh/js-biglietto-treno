@@ -11,3 +11,10 @@
     background-size: cover;
         
 }
+
+.price {
+    width: 50%;
+    margin: 0 auto;
+    color: rgb(222, 225, 84);
+    
+}

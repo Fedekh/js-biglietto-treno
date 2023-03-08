@@ -16,5 +16,12 @@
     width: 50%;
     margin: 0 auto;
     color: rgb(222, 225, 84);
+    text-align: center;
     
+}
+
+#rac {
+    border-top: 5px solid rgb(220, 5, 5);
+    margin: 20px 0;
+    padding: 20px 0;
 }

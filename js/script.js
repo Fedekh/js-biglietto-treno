@@ -16,38 +16,42 @@
     const message = "";
     let finalPrice = "";
 
-    //Chiedere la distanza da percorrere in KM
+    //Chiedere la distanza da percorrere in KM e l'età
 
-    const dist = parseInt ( prompt ("Inserisca gentilmente anche la distanza che vuole percorrere, in km grazie")) ;
-
-    // Chiedere all'utente il n. di km da percorrere e l'età
-
+    const dist = parseInt ( prompt ("Inserisca gentilmente anche la distanza che vuole percorrere in km, grazie")) ;
     const ageUser = parseInt( prompt ("Buongiorno, inserisca gentilmente la sua età"));
-    console.log(ageUser, dist, typeof ageUser, typeof dist); //voglio essere sicuro che sia un valore numerico e non stringa
+    console.log(ageUser, dist, typeof ageUser, typeof dist); //voglio essere sicuro che sia un valore numerico e non stringa    
+
    
-    // LOGICA
-    
+    // LOGICA 
 
     // Si deve calcolare il prezzo della tratta tenendo conto di un eventuale sconto da applicare sia ai minorenni (<18) che agli over >=65
 
 
-    if  (isNaN(ageUser)) {
-        alert('Per favore inserisci un\'età valida, compresa tra 12 e 99 anni');
-        const ageUser = parseInt( prompt ("Buongiorno, inserisca gentilmente la sua età"));
+    if (isNaN(dist)) {
+        alert ('Per favore inserisci valore distanza adeguato in km');
+        const dist = parseInt (prompt ("Buongiorno, inserisca gentilmente la distanza che vuole percorrere in km, grazie"))
+    } else {
 
-    } else if (ageUser > 12 && ageUser < 18) {        
+        
+        if  (isNaN(ageUser)) {
+            alert('Per favore inserisci un\'età valida, compresa tra 12 e 99 anni');
+            const ageUser = parseInt(prompt("Buongiorno, inserisca gentilmente la sua età"));
+
+        } else if (ageUser > 12 && ageUser < 18) {        
             finalPrice = dist * 0.21 * 0.8;       
             console.log(finalPrice.toFixed(2));
             document.getElementById('rac').innerHTML = `Sarebbe meglio che viaggiassi accompagnato da un genitore`; 
-
+            
             } else if (ageUser >= 65 && ageUser <= 99) {
-             finalPrice = dist * 0.21 * 0.6;
+            finalPrice = dist * 0.21 * 0.6;
             console.log(finalPrice.toFixed(2));
-
+            
             } else {
             finalPrice = dist * 0.21;
             console.log(finalPrice.toFixed(2));
-            }
+        }
+    }
 
             
     
@@ -58,7 +62,7 @@
             
     document.getElementById('price').innerHTML = `Il prezzo riservato a Lei è di ${finalPrice.toFixed(2)} €`;
 
-    
+
 
 
 

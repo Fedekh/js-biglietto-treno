@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://techprincess.it/wp-content/uploads/2021/12/frecciarossa-torino-parigi-min.jpg);
+    background-size: cover;
+        
+}
